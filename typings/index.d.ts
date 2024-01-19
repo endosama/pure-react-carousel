@@ -61,8 +61,8 @@ interface CarouselStoreInterface {
   readonly state: CarouselState
   readonly setStoreState: (state: Partial<CarouselState>) => void
   readonly getStoreState: () => CarouselState
-  readonly subscribe: (func: () => void) => void
-  readonly unsubscribe: (func: () => void) => void
+  readonly subscribe: (func: (state: Partial<CarouselState>) => void) => void
+  readonly unsubscribe: (func: (state: Partial<CarouselState>) => void) => void
   readonly updateSubscribers: (cb?: (state: CarouselState) => void) => void
   readonly subscribeMasterSpinner: (src: string) => void
   readonly unsubscribeMasterSpinner: (src: string) => false | object
